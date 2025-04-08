@@ -21,7 +21,7 @@ $palestrantes = [
 <body>
 <!-- Cabeçalho com Navbar -->
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Evento ETech 2026</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
@@ -30,13 +30,13 @@ $palestrantes = [
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#evento">Evento</a>
+                    <a class="nav-link text-white" href="#evento">Evento</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#palestrantes">Palestrantes</a>
+                    <a class="nav-link text-white" href="#palestrantes">Palestrantes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contato">Contato</a>
+                    <a class="nav-link text-white" href="#contato">Contato</a>
                 </li>
             </ul>
         </div>
@@ -44,17 +44,25 @@ $palestrantes = [
 </header>
 
 <!-- Conteúdo Principal -->
-<main class="container mt-5">
+<main class="">
     <!-- Seção de Informações do Evento -->
-    <section id="evento" class="mb-5">
+    <section id="evento" class="mb-5 fundo-evento">
         <article>
-            <h1 class="text-center">Evento ETech 2026</h1>
-            <p class="text-center"><strong>Data:</strong> 15 de Agosto de 2026</p>
-            <p class="text-center"><strong>Local:</strong> Centro de Convenções de São Paulo</p>
-            <p class="mt-4">
-                O Evento ETech 2026 é uma oportunidade imperdível para conhecer as inovações tecnológicas que transformarão o futuro.
-                Venha participar deste encontro repleto de palestras, workshops e networking de alto nível!
-            </p>
+            <div class="box-evento">
+                <h1 class="text-center text-white"><b>Evento ETech 2026</b></h1>
+                <div class="box-descricao-evento">
+                    <div class="box-linha">
+                        <p class="text-center"><strong>Data:</strong> 15 de Agosto de 2026</p>
+                        <p class="text-center"><strong>Local:</strong> Centro de Convenções de São Paulo</p>
+                    </div>
+                    <div class="box-linha">
+                        <p class="mt-2 text-center">
+                            O Evento ETech 2026 é uma oportunidade imperdível para conhecer as inovações tecnológicas que transformarão o futuro.
+                            Venha participar deste encontro repleto de palestras, workshops e networking de alto nível!
+                        </p>
+                    </div>
+                </div>
+            </div>
         </article>
     </section>
 
