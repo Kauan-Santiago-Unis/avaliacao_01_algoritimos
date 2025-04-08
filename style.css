@@ -41,3 +41,33 @@ p, li, a {
 section {
     padding: 20px 0;
 }
+
+#evento {
+    margin: 0;
+    padding: 50px 100px;
+}
+
+.fundo-evento {
+    background-image: url("img/fundo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+}
+
+.box-evento {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.box-descricao-evento {
+}
+
+.box-linha {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
