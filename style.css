@@ -56,14 +56,12 @@ section {
 }
 
 .box-evento {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 30px;
-}
-
-.box-descricao-evento {
+    margin-top: 20px;
 }
 
 .box-linha {
