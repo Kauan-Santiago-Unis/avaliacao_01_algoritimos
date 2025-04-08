@@ -1,10 +1,29 @@
 <?php
-// Array de palestrantes com nome e status de confirmação
 $palestrantes = [
-    ["nome" => "João Silva", "confirmado" => true],
-    ["nome" => "Maria Oliveira", "confirmado" => false],
-    ["nome" => "Carlos Souza", "confirmado" => true],
-    ["nome" => "Ana Pereira", "confirmado" => false]
+    [
+        "nome" => "João Silva",
+        "confirmado" => true,
+        "foto" => "/img/Joao_Silva.jpg",
+        "descricao" => "Especialista em tecnologia e inovação, com vasta experiência em startups."
+    ],
+    [
+        "nome" => "Maria Oliveira",
+        "confirmado" => false,
+        "foto" => "/img/Maria_Oliveira.jpg",
+        "descricao" => "Engenheira de Software focada em soluções para o futuro."
+    ],
+    [
+        "nome" => "Carlos Souza",
+        "confirmado" => true,
+        "foto" => "/img/Carlos_Souza.jpg",
+        "descricao" => "Palestrante renomado com expertise em inteligência artificial e machine learning."
+    ],
+    [
+        "nome" => "Ana Pereira",
+        "confirmado" => false,
+        "foto" => "/img/Ana_Pereira.jpg",
+        "descricao" => "Profissional de TI que vem inovando na área de cibersegurança."
+    ]
 ];
 ?>
 <!DOCTYPE html>
@@ -19,9 +38,8 @@ $palestrantes = [
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- Cabeçalho com Navbar -->
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-3 h5">
         <a class="navbar-brand" href="#">Evento ETech 2026</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
@@ -60,21 +78,40 @@ $palestrantes = [
 
     <!-- Seção de Palestrantes -->
     <section id="palestrantes" class="mb-5">
-        <h2 class="text-center">Palestrantes Confirmados</h2>
-        <ul class="list-group mt-3">
-            <?php
-            // Loop para exibir cada palestrante e aplicar a lógica condicional
-            foreach ($palestrantes as $palestrante) {
-                echo '<li class="list-group-item d-flex justify-content-between align-items-center">';
-                echo $palestrante['nome'];
-                // Se o palestrante não estiver confirmado, exibe a mensagem "Em Breve!"
-                if (!$palestrante['confirmado']) {
-                    echo '<span class="badge badge-warning">Em Breve!</span>';
+        <h2 class="text-center">Palestrantes</h2>
+        <div id="carouselPalestrantes" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <?php
+                $active = "active";
+                foreach ($palestrantes as $palestrante) {
+                    echo "<div class='carousel-item $active'>";
+                    echo "<div class='row justify-content-center align-items-center'>";
+                    echo "<div class='col-md-4 text-center'>";
+                    echo "<img src='".$palestrante['foto']."' class='d-block w-100 rounded' alt='".$palestrante['nome']."'>";
+                    echo "</div>";
+                    echo "<div class='col-md-6'>";
+                    echo "<h3>".$palestrante['nome']."</h3>";
+                    echo "<p>".$palestrante['descricao']."</p>";
+                    if (!$palestrante['confirmado']) {
+                        echo "<span class='badge badge-dark'>Em Breve</span>";
+                    }
+                    echo "</div>";
+                    echo "</div>";
+                    echo "</div>";
+                    $active = "";
                 }
-                echo '</li>';
-            }
-            ?>
-        </ul>
+                ?>
+            </div>
+            <!-- Controles do Carousel -->
+            <a class="carousel-control-prev" href="#carouselPalestrantes" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselPalestrantes" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Próximo</span>
+            </a>
+        </div>
     </section>
 
     <!-- Seção de Contato -->
@@ -87,17 +124,15 @@ $palestrantes = [
 </main>
 
 <!-- Rodapé -->
-<footer class="bg-light py-3">
+<footer class="bg-dark py-3">
     <div class="container text-center">
-        <p class="text-muted mb-0">© 2026 Evento ETech. Todos os direitos reservados.</p>
+        <p class="text-white mb-0">© 2026 Evento ETech. Todos os direitos reservados.</p>
     </div>
 </footer>
 
-<!-- Scripts do Bootstrap e dependências -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<!-- Script personalizado (se necessário) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script
 <script src="script.js"></script>
 </body>
 </html>
